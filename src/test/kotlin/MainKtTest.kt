@@ -128,4 +128,22 @@ class MainKtTest {
         assertEquals((money*0.6/100+20.0),result,0.001)
     }
 
+    @Test
+    fun calculateCommission_master_without_Action_Error() {
+//        arrange
+        val money: Int = 1000;
+        val typeOfCard: String = "UniPay"
+        val moneyBeforeNow: Int = 0
+        val isThereAction: Boolean = false
+//        act
+        val result = calculateCommission(
+            money,
+            typeOfCard,
+            moneyBeforeNow,
+            isThereAction
+        )
+//        assert
+        assertEquals((money*0.6/100+20.0),result,0.001)
+    }
+
 }
